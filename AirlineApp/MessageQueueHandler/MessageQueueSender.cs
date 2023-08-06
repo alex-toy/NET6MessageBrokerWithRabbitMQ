@@ -6,9 +6,9 @@ namespace MessageQueueHandler
 {
     public class MessageQueueSender
     {
-        public readonly string _exchangeName = "demoExchange";
-        public readonly string _routingKey = "demo-routing-key";
-        public readonly string _queueName = "demoQueue";
+        public readonly string _exchangeName;
+        public readonly string _routingKey;
+        public readonly string _queueName;
 
         private IModel _channel { get; set; }
         private IConnection _connection { get; set; }
@@ -24,8 +24,8 @@ namespace MessageQueueHandler
 
         public void Send<T>(T message)
         {
-            var jsonString = JsonSerializer.Serialize(message);
-            var body = Encoding.UTF8.GetBytes(jsonString);
+            string jsonString = JsonSerializer.Serialize(message);
+            byte[] body = Encoding.UTF8.GetBytes(jsonString);
 
             _channel.BasicPublish(_exchangeName, _routingKey, body: body);
         }
@@ -45,13 +45,11 @@ namespace MessageQueueHandler
             };
 
             _connection = factory.CreateConnection();
-            IModel channel = _connection.CreateModel();
+            _channel = _connection.CreateModel();
 
-            channel.ExchangeDeclare(_exchangeName, ExchangeType.Direct);
-            channel.QueueDeclare(_queueName, durable: false, exclusive: false);
-            channel.QueueBind(_queueName, _exchangeName, _routingKey);
-
-            _channel = channel;
+            _channel.ExchangeDeclare(_exchangeName, ExchangeType.Direct);
+            _channel.QueueDeclare(_queueName, durable: false, exclusive: false);
+            _channel.QueueBind(_queueName, _exchangeName, _routingKey);
         }
     }
 }

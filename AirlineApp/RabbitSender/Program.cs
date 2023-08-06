@@ -4,5 +4,9 @@ using MessageQueueHandler;
 Console.WriteLine("Rabbit Sender");
 
 var messageQueueSender = new MessageQueueSender("demoExchange", "demo-routing-key", "demoQueue");
-messageQueueSender.Send("hello friends");
+
+for (int i = 0; i < 10; i++)
+{
+    messageQueueSender.Send($"hello friends - {i}");
+}
 messageQueueSender.Close();
