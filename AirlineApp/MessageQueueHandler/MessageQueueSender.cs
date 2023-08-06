@@ -41,7 +41,7 @@ namespace MessageQueueHandler
             var factory = new ConnectionFactory()
             {
                 ClientProvidedName = "Rabbit sender app",
-                Uri = new Uri("amqp://user:password@localhost:5672")
+                Uri = new Uri("amqp://guest:guest@localhost:5672")
             };
 
             _connection = factory.CreateConnection();
