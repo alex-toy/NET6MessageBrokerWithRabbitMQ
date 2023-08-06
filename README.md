@@ -21,9 +21,14 @@ http://localhost:15672/#/
 ```
 
 
-## App
+## Rabbit App
 
 ### Rabbit MQ
+
+- packages to install in **RabbitSender**
+```
+RabbitMQ.Client
+```
 
 - run docker command to trigger message brocker
 ```

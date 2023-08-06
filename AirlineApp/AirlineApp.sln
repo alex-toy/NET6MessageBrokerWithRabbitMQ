@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSender", "RabbitSende
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageQueueHandler", "MessageQueueHandler\MessageQueueHandler.csproj", "{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

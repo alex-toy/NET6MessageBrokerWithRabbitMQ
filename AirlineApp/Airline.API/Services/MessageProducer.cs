@@ -26,7 +26,7 @@ namespace Airline.API.Services
                 //Password = "password",
                 //VirtualHost = "/",
 
-                Uri = new Uri("amqp://user:password@localhost:5672/vhost")
+                Uri = new Uri("amqp://user:password@localhost:5672")
             };
 
             var connection = factory.CreateConnection();

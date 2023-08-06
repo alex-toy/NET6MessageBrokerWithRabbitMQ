@@ -6,12 +6,20 @@ namespace Airline.Processor
 {
     public class MessageProcessor
     {
+        public readonly string _exchangeName = "demoExchange";
+        public readonly string _routingKey = "demo-routing-key";
+        public readonly string _queueName = "booking";
+
         private IModel _channel { get; set; }
         private EventingBasicConsumer _consumer { get; set; }
 
-        public MessageProcessor()
+        public MessageProcessor(string routingKey, string queueName, string exchangeName)
         {
-            _channel = GetChannel();
+            _exchangeName = exchangeName;
+            _routingKey = routingKey;
+            _queueName = queueName;
+
+            SetChannel();
             SetConsumer();
         }
 
@@ -22,7 +30,7 @@ namespace Airline.Processor
 
         private void SetConsumer()
         {
-            _consumer = GetConsumer();
+            _consumer = new EventingBasicConsumer(_channel);
 
             _consumer.Received += (sender, args) =>
             {
@@ -32,13 +40,7 @@ namespace Airline.Processor
             };
         }
 
-        private EventingBasicConsumer GetConsumer()
-        {
-            _channel.QueueDeclare("booking", durable: true, exclusive: true);
-            return new EventingBasicConsumer(_channel);
-        }
-
-        private IModel GetChannel()
+        private void SetChannel()
         {
             var factory = new ConnectionFactory()
             {
@@ -51,7 +53,9 @@ namespace Airline.Processor
 
             var connection = factory.CreateConnection();
             IModel channel = connection.CreateModel();
-            return channel;
+            _channel.QueueDeclare(_queueName, durable: true, exclusive: true);
+
+            _channel = channel;
         }
     }
 }
