@@ -35,7 +35,7 @@ RabbitMQ.Client
 docker run -d --hostname rmq --name rabbit-server -p 8080:15672 -p 5672:5672 rabbitmq:3-management
 ```
 
-- go to http://localhost:8080 and see the message waiting in the queue
+- run the sender and go to http://localhost:8080/#/queues and see the message waiting in the queue
 <img src="/pictures/message.png" title="message in queue"  width="900">
 
 

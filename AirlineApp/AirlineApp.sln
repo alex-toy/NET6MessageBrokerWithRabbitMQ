@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageQueueHandler", "Mess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver1", "RabbitReceiver1\RabbitReceiver1.csproj", "{46EF540A-162A-478B-B9E9-9CA12831F737}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver2", "RabbitReceiver2\RabbitReceiver2.csproj", "{ACE0A436-F659-4C32-91C4-2B0ADCDCAB45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{46EF540A-162A-478B-B9E9-9CA12831F737}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46EF540A-162A-478B-B9E9-9CA12831F737}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46EF540A-162A-478B-B9E9-9CA12831F737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE0A436-F659-4C32-91C4-2B0ADCDCAB45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE0A436-F659-4C32-91C4-2B0ADCDCAB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE0A436-F659-4C32-91C4-2B0ADCDCAB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE0A436-F659-4C32-91C4-2B0ADCDCAB45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

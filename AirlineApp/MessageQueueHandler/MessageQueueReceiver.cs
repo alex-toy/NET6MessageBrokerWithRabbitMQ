@@ -1,6 +1,5 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System.Text;
 
 namespace MessageQueueHandler
 {
@@ -12,12 +11,14 @@ namespace MessageQueueHandler
 
         private IModel _channel { get; set; }
         private EventingBasicConsumer _consumer { get; set; }
+        private EventHandler<BasicDeliverEventArgs> _eventHandler { get; set; }
 
-        public MessageQueueReceiver(string routingKey, string queueName, string exchangeName)
+        public MessageQueueReceiver(string routingKey, string queueName, string exchangeName, EventHandler<BasicDeliverEventArgs> eventHandler)
         {
             _exchangeName = exchangeName;
             _routingKey = routingKey;
             _queueName = queueName;
+            _eventHandler = eventHandler;
 
             SetChannel();
             SetConsumer();
@@ -38,14 +39,7 @@ namespace MessageQueueHandler
         private void SetConsumer()
         {
             _consumer = new EventingBasicConsumer(_channel);
-
-            _consumer.Received += (sender, args) =>
-            {
-                var body = args.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
-                Console.WriteLine($"new message : {message}");
-                _channel.BasicAck(args.DeliveryTag, multiple: false);
-            };
+            _consumer.Received += _eventHandler;
         }
 
         private void SetChannel()

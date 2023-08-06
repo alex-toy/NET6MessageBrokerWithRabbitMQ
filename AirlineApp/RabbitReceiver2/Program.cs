@@ -2,14 +2,14 @@
 using RabbitMQ.Client.Events;
 using System.Text;
 
-Console.WriteLine("RabbitMQ receiver 1");
+Console.WriteLine("RabbitMQ receiver 2");
 
 EventHandler<BasicDeliverEventArgs> messageReceivedEventHandler = (sender, args) =>
 {
-    Task.Delay(TimeSpan.FromSeconds(5)).Wait();
+    Task.Delay(TimeSpan.FromSeconds(2)).Wait();
     byte[] body = args.Body.ToArray();
     string message = Encoding.UTF8.GetString(body);
-    Console.WriteLine($"New message : {message}");
+    Console.WriteLine($"New message : {message} processed by receiver 2");
     //_channel.BasicAck(args.DeliveryTag, multiple: false);
 };
 
