@@ -9,15 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Airline.API", "Airline.API\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSender", "RabbitSender\RabbitSender.csproj", "{93725ABA-3EDC-4780-98A7-4AF3639A12EA}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageQueueHandler", "MessageQueueHandler\MessageQueueHandler.csproj", "{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageQueueHandler", "MessageQueueHandler\MessageQueueHandler.csproj", "{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitReceiver1", "RabbitReceiver1\RabbitReceiver1.csproj", "{46EF540A-162A-478B-B9E9-9CA12831F737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver1", "RabbitReceiver1\RabbitReceiver1.csproj", "{46EF540A-162A-478B-B9E9-9CA12831F737}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitReceiver2", "RabbitReceiver2\RabbitReceiver2.csproj", "{ACE0A436-F659-4C32-91C4-2B0ADCDCAB45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver2", "RabbitReceiver2\RabbitReceiver2.csproj", "{ACE0A436-F659-4C32-91C4-2B0ADCDCAB45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitReceiver3", "RabbitReceiver3\RabbitReceiver3.csproj", "{79ABF2E0-EF2D-44D8-9C9F-9DD13D2DB645}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver3", "RabbitReceiver3\RabbitReceiver3.csproj", "{79ABF2E0-EF2D-44D8-9C9F-9DD13D2DB645}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMessage.API", "RabbitMessage.API\RabbitMessage.API.csproj", "{1C94D600-6BE1-4119-9832-82B74403DDA5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{958FB988-15CA-45DB-92C4-726D3B497144}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +39,6 @@ Global
 		{93725ABA-3EDC-4780-98A7-4AF3639A12EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93725ABA-3EDC-4780-98A7-4AF3639A12EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93725ABA-3EDC-4780-98A7-4AF3639A12EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{468FFC0A-C10E-4DDF-AF1E-8E0497F46F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +55,14 @@ Global
 		{79ABF2E0-EF2D-44D8-9C9F-9DD13D2DB645}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79ABF2E0-EF2D-44D8-9C9F-9DD13D2DB645}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79ABF2E0-EF2D-44D8-9C9F-9DD13D2DB645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C94D600-6BE1-4119-9832-82B74403DDA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C94D600-6BE1-4119-9832-82B74403DDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C94D600-6BE1-4119-9832-82B74403DDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C94D600-6BE1-4119-9832-82B74403DDA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{958FB988-15CA-45DB-92C4-726D3B497144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{958FB988-15CA-45DB-92C4-726D3B497144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{958FB988-15CA-45DB-92C4-726D3B497144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{958FB988-15CA-45DB-92C4-726D3B497144}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

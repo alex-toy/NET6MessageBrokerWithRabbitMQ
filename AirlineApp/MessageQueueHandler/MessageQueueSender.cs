@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace MessageQueueHandler
 {
-    public class MessageQueueSender
+    public class MessageQueueSender : IMessageQueueSender
     {
         public readonly string _exchangeName;
         public readonly string _routingKey;

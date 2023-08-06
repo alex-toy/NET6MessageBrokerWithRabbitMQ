@@ -2,18 +2,20 @@ version: '3.4'
 
 services:
 
-  airline.api:
-    image: ${DOCKER_REGISTRY-}airlineapi
+
+  rabbitmessage.api:
+    image: ${DOCKER_REGISTRY-}rabbitmessageapi
     build:
       context: .
-      dockerfile: Airline.API/Dockerfile
+      dockerfile: RabbitMessage.API/Dockerfile
+
 
   rabbitmq:
     container_name: "rabbitmq"
-    image: rabbitmq:3.8-management-alpine
+    image: rabbitmq:3-management
     environment:
      - RABBITMQ_DEFAULT_USER=user
      - RABBITMQ_DEFAULT_PASS=password
     ports:
      - '5672:5672'
-     - '15672:15672'
+     - '8080:15672'

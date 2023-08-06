@@ -4,7 +4,8 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "airline.api": "StartDebugging"
+        "airline.api": "StartDebugging",
+        "rabbitmessage.api": "StartDebugging"
       }
     }
   }

@@ -20,6 +20,9 @@ RabbitMQ.Client
 http://localhost:15672/#/
 ```
 
+- send messages through the API and receive them 
+<img src="/pictures/api.png" title="send messages through API"  width="900">
+
 
 ## Rabbit App
 
