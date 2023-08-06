@@ -38,5 +38,8 @@ docker run -d --hostname rmq --name rabbit-server -p 8080:15672 -p 5672:5672 rab
 - run the sender and go to http://localhost:8080/#/queues and see the message waiting in the queue
 <img src="/pictures/message.png" title="message in queue"  width="900">
 
+- run sender and receivers at the same time and see the messages processed
+<img src="/pictures/messages.png" title="message in queue"  width="900">
+
 
 

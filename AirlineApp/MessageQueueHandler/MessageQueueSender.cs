@@ -48,8 +48,9 @@ namespace MessageQueueHandler
             _channel = _connection.CreateModel();
 
             _channel.ExchangeDeclare(_exchangeName, ExchangeType.Direct);
-            _channel.QueueDeclare(_queueName, durable: false, exclusive: false);
-            _channel.QueueBind(_queueName, _exchangeName, _routingKey);
+            _channel.QueueDeclare(_queueName, durable: false, exclusive: false, false);
+            _channel.QueueBind(_queueName, _exchangeName, _routingKey, null);
+            _channel.BasicQos(prefetchSize: 0, prefetchCount: 1, false);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System.Reflection;
 
 namespace MessageQueueHandler
 {
@@ -13,7 +14,7 @@ namespace MessageQueueHandler
         private EventingBasicConsumer _consumer { get; set; }
         private EventHandler<BasicDeliverEventArgs> _eventHandler { get; set; }
 
-        public MessageQueueReceiver(string routingKey, string queueName, string exchangeName, EventHandler<BasicDeliverEventArgs> eventHandler)
+        public MessageQueueReceiver(string exchangeName, string routingKey, string queueName, EventHandler<BasicDeliverEventArgs> eventHandler)
         {
             _exchangeName = exchangeName;
             _routingKey = routingKey;
@@ -40,6 +41,7 @@ namespace MessageQueueHandler
         {
             _consumer = new EventingBasicConsumer(_channel);
             _consumer.Received += _eventHandler;
+            _consumer.Received += (sender, args) => _channel.BasicAck(args.DeliveryTag, multiple: false);
         }
 
         private void SetChannel()
@@ -54,9 +56,9 @@ namespace MessageQueueHandler
             _channel = connection.CreateModel();
 
             _channel.ExchangeDeclare(_exchangeName, ExchangeType.Direct);
-            _channel.QueueDeclare(_queueName, durable: false, exclusive: false);
-            _channel.QueueBind(_queueName, _exchangeName, _routingKey);
-            _channel.BasicQos(prefetchSize:0, prefetchCount:1, false); ;
+            _channel.QueueDeclare(_queueName, durable: false, exclusive: false, false);
+            _channel.QueueBind(_queueName, _exchangeName, _routingKey, null);
+            _channel.BasicQos(prefetchSize:0, prefetchCount:1, false);
         }
     }
 }
