@@ -3,15 +3,15 @@
 RabbitMQ is a powerful message broker that can help you create resilient and scalable applications. In this project, we'll study the basics of message brokers, study how RabbitMQ can be used with C# applications.
 
 
-## Airline App based on RabbitMQ nuget package
+## Airline App
 
-### Packages to install
+- packages to install in **Airline.API**
 ```
 RabbitMQ.Client
 ```
 
 
-## App : based on a docker container
+## App
 
 ### Rabbit MQ
 
