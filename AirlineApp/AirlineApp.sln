@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airline.Processor", "Airline.Processor\Airline.Processor.csproj", "{E9355592-5A33-49E9-A265-F5F5BAC22760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Airline.Processor", "Airline.Processor\Airline.Processor.csproj", "{E9355592-5A33-49E9-A265-F5F5BAC22760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airline.API", "Airline.API\Airline.API.csproj", "{30BA2C0A-F951-40CE-BB42-9604C70733E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Airline.API", "Airline.API\Airline.API.csproj", "{30BA2C0A-F951-40CE-BB42-9604C70733E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitSender", "RabbitSender\RabbitSender.csproj", "{93725ABA-3EDC-4780-98A7-4AF3639A12EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSender", "RabbitSender\RabbitSender.csproj", "{93725ABA-3EDC-4780-98A7-4AF3639A12EA}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{93725ABA-3EDC-4780-98A7-4AF3639A12EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93725ABA-3EDC-4780-98A7-4AF3639A12EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93725ABA-3EDC-4780-98A7-4AF3639A12EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4C0E91-32C0-4AEC-A16E-7DED505227EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

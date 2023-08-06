@@ -1,4 +1,5 @@
 ﻿using RabbitMQ.Client;
+using System;
 using System.Text;
 using System.Text.Json;
 
@@ -20,10 +21,12 @@ namespace Airline.API.Services
         {
             var factory = new ConnectionFactory()
             {
-                HostName = "localhost",
-                UserName = "user",
-                Password = "password",
-                VirtualHost = "/"
+                //HostName = "localhost",
+                //UserName = "user",
+                //Password = "password",
+                //VirtualHost = "/",
+
+                Uri = new Uri("amqp://user:password@localhost:5672/vhost")
             };
 
             var connection = factory.CreateConnection();

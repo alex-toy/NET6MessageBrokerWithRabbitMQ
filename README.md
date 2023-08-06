@@ -10,6 +10,16 @@ RabbitMQ is a powerful message broker that can help you create resilient and sca
 RabbitMQ.Client
 ```
 
+- packages to install in **Airline.Processor**
+```
+RabbitMQ.Client
+```
+
+- run docker compose and reach 
+```
+http://localhost:15672/#/
+```
+
 
 ## App
 
